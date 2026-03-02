@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AllergenWise logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c8b90"/>
+      <stop offset="1" stop-color="#0f5e61"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="62" height="62" rx="18" fill="#ffffff" stroke="#0b1f22" stroke-opacity="0.12"/>
+  <g fill="none" stroke="url(#g)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- simple lotus-like mark -->
+    <path d="M32 16c-6 7-6 14 0 21c6-7 6-14 0-21z"/>
+    <path d="M20 22c-3 8 0 14 9 18c1-7-2-13-9-18z"/>
+    <path d="M44 22c3 8 0 14-9 18c-1-7 2-13 9-18z"/>
+    <path d="M14 30c2 7 8 11 18 12c-2-6-8-10-18-12z"/>
+    <path d="M50 30c-2 7-8 11-18 12c2-6 8-10 18-12z"/>
+  </g>
+</svg>

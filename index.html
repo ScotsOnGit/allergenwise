@@ -1,15 +1,215 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-AU">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AllergenWise</title>
-  <link rel="stylesheet" href="/styles.css" />
+  <meta name="description" content="AllergenWise is a specialised allergen consultancy helping hospitality venues provide clear allergen matrices so customers with food allergies can make confident, informed decisions when eating out." />
+
+  <title>AllergenWise — Food allergen matrices for hospitality venues (Perth)</title>
+
+  <meta property="og:title" content="AllergenWise" />
+  <meta property="og:description" content="Specialised allergen consultancy providing clear allergen matrices for hospitality venues." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <main class="container">
-    <h1>AllergenWise</h1>
-    <p>Simple, fast site. Backed up to Git.</p>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="AllergenWise home">
+        <img class="brand__logo" src="./assets/logo.svg" alt="AllergenWise" width="44" height="44" />
+        <span class="brand__name">AllergenWise</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#services">What we do</a>
+        <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn--small" href="#contact">Book a consult</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="top" class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">Perth metro • Hospitality allergen support</p>
+          <h1>Clear allergen matrices for cafes & restaurants — so customers can order with confidence.</h1>
+          <p class="lead">
+            AllergenWise is a specialised allergen consultancy that prepares practical, hard-copy allergen matrices for venue teams and customers.
+            Reduce uncertainty at the counter, improve consistency, and support safer eating out.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn" href="mailto:info@allergenwise.com.au?subject=AllergenWise%20consult%20enquiry">Email to book a consult</a>
+            <a class="btn btn--ghost" href="#how">See how it works</a>
+          </div>
+
+          <div class="hero__badges" aria-label="Highlights">
+            <div class="badge">Hard copy matrices</div>
+            <div class="badge">Staff + customer friendly</div>
+            <div class="badge">Perth now • Australia next</div>
+          </div>
+        </div>
+
+        <aside class="hero__card" aria-label="Quick enquiry">
+          <div class="card">
+            <h2 class="card__title">Quick enquiry</h2>
+            <p class="card__text">Tell us your venue and we’ll reply with next steps.</p>
+
+            <div class="contact-box">
+              <div class="contact-box__row">
+                <span class="contact-box__label">Email</span>
+                <a class="contact-box__value" href="mailto:info@allergenwise.com.au">info@allergenwise.com.au</a>
+              </div>
+              <div class="contact-box__row">
+                <span class="contact-box__label">What to include</span>
+                <span class="contact-box__value">Menu link/PDF, location, preferred timing</span>
+              </div>
+            </div>
+
+            <p class="fineprint">
+              We provide menu allergen information support for hospitality venues. We do not diagnose, treat, or cure allergies.
+            </p>
+          </div>
+        </aside>
+      </div>
+      <div class="hero__wave" aria-hidden="true"></div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section__head">
+          <h2>What we do</h2>
+          <p>We turn your menu into a practical allergen matrix your team can actually use.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="feature">
+            <h3>Allergen matrices (hard copy)</h3>
+            <p>Clear tables showing allergens present in each menu item — designed for day-to-day service.</p>
+          </article>
+          <article class="feature">
+            <h3>Venue-friendly format</h3>
+            <p>Easy to read at the counter, consistent across staff, and suitable for sharing with customers on request.</p>
+          </article>
+          <article class="feature">
+            <h3>Consultancy support</h3>
+            <p>We help you implement the matrix so it becomes part of how your venue communicates allergen information.</p>
+          </article>
+        </div>
+
+        <div class="callout">
+          <div>
+            <h3>Need pricing?</h3>
+            <p>We’ll confirm scope after a quick consult. Email us and we’ll outline options.</p>
+          </div>
+          <a class="btn" href="mailto:info@allergenwise.com.au?subject=AllergenWise%20pricing%20request">Request info</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="how">
+      <div class="container">
+        <div class="section__head">
+          <h2>How it works</h2>
+          <p>Simple, structured, and designed to reduce uncertainty for staff and customers.</p>
+        </div>
+
+        <ol class="steps">
+          <li>
+            <h3>Share your menu</h3>
+            <p>Send a link or PDF, plus any key prep notes and ingredient details you already have.</p>
+          </li>
+          <li>
+            <h3>We build your matrix</h3>
+            <p>We compile menu items into a consistent allergen matrix format for practical use in service.</p>
+          </li>
+          <li>
+            <h3>Use it with confidence</h3>
+            <p>You receive a hard-copy matrix for staff and customer enquiries, plus guidance on implementation.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section__head">
+          <h2>FAQ</h2>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>Is this medical advice?</summary>
+            <div class="faq__content">
+              <p>No. AllergenWise provides menu allergen information support for hospitality venues. We do not diagnose, treat, or cure allergies.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Who is this for?</summary>
+            <div class="faq__content">
+              <p>Primarily cafes and restaurants in the Perth metro area, with a strong focus on supporting people with food allergies when eating out.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Can you help outside Perth?</summary>
+            <div class="faq__content">
+              <p>Yes — we’re starting in Perth metro and expanding. If you’re outside Perth, email us and we’ll confirm availability.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>What do you need from us to start?</summary>
+            <div class="faq__content">
+              <p>A current menu (link or PDF), venue location, and any ingredient/prep details you can provide.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="contact">
+      <div class="container">
+        <div class="contact">
+          <div class="contact__copy">
+            <h2>Book a consult</h2>
+            <p>Ready to reduce uncertainty and improve allergen communication in service?</p>
+            <p class="lead"><a href="mailto:info@allergenwise.com.au?subject=AllergenWise%20consult%20enquiry">info@allergenwise.com.au</a></p>
+            <p class="fineprint">Perth metro now • nationwide rollout planned.</p>
+          </div>
+          <div class="contact__card">
+            <div class="card">
+              <h3 class="card__title">Email template (copy/paste)</h3>
+              <pre class="template" aria-label="Email template">Hi AllergenWise,\n\nI’d like to book a consult for our venue.\n\nVenue name:\nSuburb:\nMenu link/PDF:\nBest contact name/number:\nAnything we should know (allergen concerns, specials, prep notes):\n\nThanks,</pre>
+              <a class="btn btn--ghost" href="mailto:info@allergenwise.com.au?subject=AllergenWise%20consult%20enquiry&body=Hi%20AllergenWise%2C%0A%0AI%E2%80%99d%20like%20to%20book%20a%20consult%20for%20our%20venue.%0A%0AVenue%20name%3A%0ASuburb%3A%0AMenu%20link%2FPDF%3A%0ABest%20contact%20name%2Fnumber%3A%0AAnything%20we%20should%20know%20(allergen%20concerns%2C%20specials%2C%20prep%20notes)%3A%0A%0AThanks%2C">Open email</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img class="footer__logo" src="./assets/logo.svg" alt="" width="34" height="34" />
+        <div>
+          <strong>AllergenWise</strong>
+          <div class="fineprint">Specialised allergen consultancy (hospitality)</div>
+        </div>
+      </div>
+      <div class="footer__links">
+        <a href="mailto:info@allergenwise.com.au">info@allergenwise.com.au</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
