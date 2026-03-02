@@ -31,13 +31,11 @@ jobs:
           server: ${{ secrets.HOSTINGER_SSH_HOST }}
           port: ${{ secrets.HOSTINGER_SSH_PORT }}
           password: ${{ secrets.HOSTINGER_SSH_PASS }}
-          local_path: "./*"
+          local_path: "./index.html,./styles.css,./robots.txt,./sitemap.xml,./assets/*"
           remote_path: ${{ secrets.HOSTINGER_REMOTE_PATH }}
           delete_remote_files: false
           sftp_only: true
-          exclude: |
-            **/.git*
-            **/.github/**
-            **/node_modules/**
-            **/.DS_Store
-            **/*.log
+          # Note: this action doesn't support an "exclude" input.
+          # We rely on only committing deployable files to the repo,
+          # and we avoid uploading workflow/git metadata by scoping local_path.
+          args: "-o StrictHostKeyChecking=no"
