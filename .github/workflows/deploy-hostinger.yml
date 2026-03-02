@@ -32,7 +32,7 @@ jobs:
           port: ${{ secrets.HOSTINGER_SSH_PORT }}
           password: ${{ secrets.HOSTINGER_SSH_PASS }}
           local_path: "./"
-          remote_path: "public_html/"
+          remote_path: "domains/allergenwise.com.au/public_html/"
           delete_remote_files: false
           sftp_only: true
           # Use rsync-style excludes (supported by this action) to avoid uploading repo metadata.
