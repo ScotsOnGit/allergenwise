@@ -1,0 +1,43 @@
+name: Deploy to Hostinger (SFTP)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch: {}
+
+concurrency:
+  group: deploy-hostinger
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # This workflow deploys the static site files to Hostinger via SFTP.
+      # Required GitHub Secrets (Repo → Settings → Secrets and variables → Actions):
+      #   HOSTINGER_SSH_HOST  (e.g. 46.202.138.195)
+      #   HOSTINGER_SSH_PORT  (e.g. 65002)
+      #   HOSTINGER_SSH_USER  (e.g. u363903124)
+      #   HOSTINGER_SSH_PASS  (your SSH password)
+      #   HOSTINGER_REMOTE_PATH (e.g. public_html)
+      - name: Deploy via SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
+        with:
+          username: ${{ secrets.HOSTINGER_SSH_USER }}
+          server: ${{ secrets.HOSTINGER_SSH_HOST }}
+          port: ${{ secrets.HOSTINGER_SSH_PORT }}
+          password: ${{ secrets.HOSTINGER_SSH_PASS }}
+          local_path: "./*"
+          remote_path: ${{ secrets.HOSTINGER_REMOTE_PATH }}
+          delete_remote_files: false
+          sftp_only: true
+          exclude: |
+            **/.git*
+            **/.github/**
+            **/node_modules/**
+            **/.DS_Store
+            **/*.log
