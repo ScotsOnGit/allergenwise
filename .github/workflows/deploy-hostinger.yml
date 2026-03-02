@@ -31,11 +31,10 @@ jobs:
           server: ${{ secrets.HOSTINGER_SSH_HOST }}
           port: ${{ secrets.HOSTINGER_SSH_PORT }}
           password: ${{ secrets.HOSTINGER_SSH_PASS }}
-          local_path: "./index.html,./styles.css,./robots.txt,./sitemap.xml,./assets/*"
+          local_path: "./"
           remote_path: ${{ secrets.HOSTINGER_REMOTE_PATH }}
           delete_remote_files: false
           sftp_only: true
-          # Note: this action doesn't support an "exclude" input.
-          # We rely on only committing deployable files to the repo,
-          # and we avoid uploading workflow/git metadata by scoping local_path.
+          # Use rsync-style excludes (supported by this action) to avoid uploading repo metadata.
+          rsyncArgs: "--exclude=.git/ --exclude=.github/ --exclude=.gitignore --exclude=README.md"
           args: "-o StrictHostKeyChecking=no"
