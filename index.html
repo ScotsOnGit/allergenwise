@@ -37,6 +37,7 @@
         <a href="#services">What we do</a>
         <a href="#how">How it works</a>
         <a href="#faq">FAQ</a>
+        <a href="#newsletter">Newsletter</a>
         <a class="btn btn--small" href="#contact">Book a consult</a>
       </nav>
     </div>
@@ -67,7 +68,8 @@
             <h2 class="card__title">Request a consult</h2>
             <p class="card__text">Send a quick message and we’ll get back to you.</p>
 
-            <form class="form" action="mailto:info@allergenwise.com.au" method="post" enctype="text/plain">
+            <form class="form" id="contact-form">
+              <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off">
               <label>
                 <span>Venue name</span>
                 <input name="Venue" autocomplete="organization" required />
@@ -93,6 +95,7 @@
                 <textarea name="Message" rows="4" placeholder="Tell us what you need (e.g., matrix for breakfast/lunch menu, specials, timelines)…" required></textarea>
               </label>
               <button class="btn btn--block" type="submit">Send enquiry</button>
+              <p class="form__status" id="form-status"></p>
               <p class="fineprint" style="margin-top:.6rem">Alternatively email us at <a href="mailto:info@allergenwise.com.au">info@allergenwise.com.au</a>.</p>
             </form>
           </div>
@@ -211,6 +214,21 @@
         </div>
       </div>
     </section>
+    <section class="section" id="newsletter" style="background: linear-gradient(135deg, #e8f6f6 0%, #f5f0f8 100%);">
+      <div class="container">
+        <div class="section__head" style="text-align: center; max-width: 600px; margin: 0 auto;">
+          <h2>Stay Updated</h2>
+          <p>Subscribe to our newsletter for the latest allergen regulations, tips for hospitality venues, and news from AllergenWise.</p>
+        </div>
+
+        <form class="newsletter-form" id="newsletter-form" style="max-width: 450px; margin: 1.5rem auto 0; display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
+          <input type="email" name="newsletter_email" placeholder="Your email address" required style="flex: 1; min-width: 220px; padding: 0.85rem 1rem; border-radius: 999px; border: 1px solid #c8e7e5; background: #fff; font-size: 1rem;" />
+          <button type="submit" class="btn" style="white-space: nowrap;">Subscribe</button>
+        </form>
+        <p class="form__status" id="newsletter-status" style="text-align: center; margin-top: 0.75rem; font-weight: 600;"></p>
+        <p style="text-align: center; font-size: 0.85rem; color: #758495; margin-top: 0.75rem;">We respect your privacy. Unsubscribe anytime.</p>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -228,5 +246,85 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Contact form handler
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const form = this;
+      const status = document.getElementById('form-status');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      
+      // Disable button during submission
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      status.textContent = '';
+      
+      try {
+        const formData = new FormData(form);
+        const response = await fetch('submit-form.php', {
+          method: 'POST',
+          body: formData
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+          status.textContent = result.message;
+          status.style.color = '#2f8f8f';
+          form.reset();
+        } else {
+          status.textContent = result.message || 'Something went wrong. Please try again.';
+          status.style.color = '#c44';
+        }
+      } catch (error) {
+        status.textContent = 'Network error. Please try again or email us directly.';
+        status.style.color = '#c44';
+      }
+      
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send enquiry';
+    });
+
+    // Newsletter form handler
+    document.getElementById('newsletter-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const form = this;
+      const status = document.getElementById('newsletter-status');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      
+      // Disable button during submission
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Subscribing...';
+      status.textContent = '';
+      
+      try {
+        const formData = new FormData(form);
+        const response = await fetch('newsletter.php', {
+          method: 'POST',
+          body: formData
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+          status.textContent = result.message;
+          status.style.color = '#2f8f8f';
+          form.reset();
+        } else {
+          status.textContent = result.message || 'Something went wrong. Please try again.';
+          status.style.color = '#c44';
+        }
+      } catch (error) {
+        status.textContent = 'Network error. Please try again.';
+        status.style.color = '#c44';
+      }
+      
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Subscribe';
+    });
+  </script>
 </body>
 </html>

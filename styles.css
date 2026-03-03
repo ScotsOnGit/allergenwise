@@ -10,14 +10,20 @@
   --p6: #758495; /* slate */
   --p7: #4A526E; /* deep slate */
 
+  /* Universal allergen teal - primary brand color */
+  --teal: #008080;
+  --teal-light: #20B2AA;
+  --teal-dark: #006666;
+
   /* Semantic tokens */
   --bg: #fbfbfd;
   --surface: #ffffff;
   --text: #121628;
   --muted: color-mix(in srgb, var(--p7) 70%, white);
 
-  --brand: #2f8f8f; /* derived from p3 */
-  --brand-strong: #1f6f6f;
+  /* Updated brand colors using teal */
+  --brand: var(--teal);
+  --brand-strong: var(--teal-dark);
 
   --border: color-mix(in srgb, var(--p7) 16%, transparent);
   --shadow: 0 18px 55px color-mix(in srgb, var(--p7) 18%, transparent);
@@ -86,17 +92,25 @@ a:hover{ color: var(--p7); }
 .btn--block{ width: 100%; }
 
 /* Hero */
-.hero{ padding: 3rem 0 2.5rem; }
+.hero{ padding: 3rem 0 2.5rem; position: relative; overflow: hidden; }
 .hero__grid{ display:grid; grid-template-columns: 1.25fr .85fr; gap: 2rem; align-items:start; }
+.hero__wave{
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 80px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23008080' d='M0,40 C360,90 720,0 1080,50 C1260,75 1350,60 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E") no-repeat bottom;
+  background-size: cover;
+  opacity: 0.12;
+}
 
 .eyebrow{
   display:inline-flex;
   gap:.5rem;
   align-items:center;
   font-weight: 780;
-  color: var(--p7);
+  color: var(--teal-dark);
   background: linear-gradient(90deg, color-mix(in srgb, var(--p2) 75%, white), color-mix(in srgb, var(--p1) 75%, white));
-  border:1px solid color-mix(in srgb, var(--p7) 10%, transparent);
+  border:1px solid color-mix(in srgb, var(--teal) 25%, transparent);
   padding:.35rem .7rem;
   border-radius:999px;
 }
@@ -130,23 +144,30 @@ h1{ font-size: clamp(2rem, 2.7vw + 1rem, 3rem); line-height:1.08; margin: .9rem 
 
 /* Sections */
 .section{ padding: 3rem 0; }
-.section--alt{ background: color-mix(in srgb, white 74%, var(--p2)); border-top: 1px solid color-mix(in srgb, var(--p7) 8%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--p7) 8%, transparent); }
-.section__head h2{ margin: 0 0 .35rem; font-size: 1.85rem; }
+.section--alt{ 
+  background: linear-gradient(180deg, 
+    color-mix(in srgb, var(--p2) 40%, white), 
+    color-mix(in srgb, var(--p1) 40%, white)
+  ); 
+  border-top: 1px solid color-mix(in srgb, var(--teal) 20%, transparent); 
+  border-bottom: 1px solid color-mix(in srgb, var(--teal) 20%, transparent); 
+}
+.section__head h2{ margin: 0 0 .35rem; font-size: 1.85rem; color: var(--teal-dark); }
 .section__head p{ margin: 0; color: var(--muted); }
 
 .grid-3{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.2rem; }
-.feature{ background: #fff; border: 1px solid color-mix(in srgb, var(--p7) 10%, transparent); border-radius: var(--radius); padding: 1.25rem; }
-.feature h3{ margin:.1rem 0 .45rem; }
-.feature p{ margin:0; color: var(--muted); }
+.feature{ background: #fff; border: 1px solid color-mix(in srgb, var(--teal) 15%, transparent); border-radius: var(--radius); padding: 1.25rem; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+.feature:hover{ border-color: color-mix(in srgb, var(--teal) 35%, transparent); box-shadow: 0 8px 30px color-mix(in srgb, var(--teal) 12%, transparent); }
+.feature h3{ margin:.1rem 0 .45rem; color: var(--teal-dark); }
 
 /* Steps */
 .steps{ list-style:none; padding:0; margin: 1.2rem 0 0; display:grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; counter-reset: step; }
 .steps li{ background:#fff; border:1px solid color-mix(in srgb, var(--p7) 10%, transparent); border-radius: var(--radius); padding: 1.25rem; position:relative; }
 .steps li::before{ counter-increment: step; content: counter(step);
   position:absolute; top: 14px; right: 14px; width: 34px; height: 34px; border-radius: 999px;
-  display:grid; place-items:center; background: color-mix(in srgb, var(--p1) 60%, white);
-  border:1px solid color-mix(in srgb, var(--p7) 10%, transparent);
-  font-weight: 820; color: var(--p7);
+  display:grid; place-items:center; background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+  border:1px solid color-mix(in srgb, var(--teal-dark) 30%, transparent);
+  font-weight: 820; color: #fff;
 }
 .steps h3{ margin:.1rem 0 .4rem; }
 .steps p{ margin:0; color: var(--muted); }
