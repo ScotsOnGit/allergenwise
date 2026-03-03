@@ -21,6 +21,9 @@
   <meta name="twitter:image" content="https://allergenwise.com.au/assets/og-image.svg" />
 
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
@@ -29,7 +32,7 @@
   <header class="header">
     <div class="container header__inner">
       <a class="brand" href="#top" aria-label="AllergenWise home">
-        <img class="brand__logo" src="./assets/logo.svg" alt="AllergenWise" width="44" height="44" />
+        <img class="brand__logo" src="./assets/logo.svg" alt="AllergenWise" width="80" height="80" />
         <span class="brand__name">AllergenWise</span>
       </a>
 
@@ -38,7 +41,7 @@
         <a href="#how">How it works</a>
         <a href="#faq">FAQ</a>
         <a href="#newsletter">Newsletter</a>
-        <a class="btn btn--small" href="#contact">Book a consult</a>
+        <a class="btn btn--primary btn--small" href="#contact">Book a consult</a>
       </nav>
     </div>
   </header>
@@ -54,7 +57,7 @@
           </p>
 
           <div class="hero__cta">
-            <a class="btn" href="#contact">Request a consult</a>
+            <a class="btn btn--primary" href="#contact">Request a consult</a>
             <a class="btn btn--ghost" href="#services">What we do</a>
           </div>
 
@@ -131,7 +134,7 @@
             <h3>Need pricing?</h3>
             <p>We’ll confirm scope after a quick consult. Email us and we’ll outline options.</p>
           </div>
-          <a class="btn" href="mailto:info@allergenwise.com.au?subject=AllergenWise%20pricing%20request">Request info</a>
+          <a class="btn btn--primary" href="mailto:info@allergenwise.com.au?subject=AllergenWise%20pricing%20request">Request info</a>
         </div>
       </div>
     </section>
@@ -210,23 +213,23 @@
             <h3>Prefer email?</h3>
             <p>Send your menu link/PDF, venue location, and a contact number. We’ll reply with next steps.</p>
           </div>
-          <a class="btn" href="mailto:info@allergenwise.com.au?subject=AllergenWise%20consult%20enquiry">Email us</a>
+          <a class="btn btn--primary" href="mailto:info@allergenwise.com.au?subject=AllergenWise%20consult%20enquiry">Email us</a>
         </div>
       </div>
     </section>
-    <section class="section" id="newsletter" style="background: linear-gradient(135deg, #e8f6f6 0%, #f5f0f8 100%);">
+    <section class="section" id="newsletter">
       <div class="container">
-        <div class="section__head" style="text-align: center; max-width: 600px; margin: 0 auto;">
+        <div class="section__head">
           <h2>Stay Updated</h2>
           <p>Subscribe to our newsletter for the latest allergen regulations, tips for hospitality venues, and news from AllergenWise.</p>
         </div>
 
-        <form class="newsletter-form" id="newsletter-form" style="max-width: 450px; margin: 1.5rem auto 0; display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
-          <input type="email" name="newsletter_email" placeholder="Your email address" required style="flex: 1; min-width: 220px; padding: 0.85rem 1rem; border-radius: 999px; border: 1px solid #c8e7e5; background: #fff; font-size: 1rem;" />
-          <button type="submit" class="btn" style="white-space: nowrap;">Subscribe</button>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" name="newsletter_email" placeholder="Your email address" required />
+          <button type="submit" class="btn btn--primary">Subscribe</button>
         </form>
-        <p class="form__status" id="newsletter-status" style="text-align: center; margin-top: 0.75rem; font-weight: 600;"></p>
-        <p style="text-align: center; font-size: 0.85rem; color: #758495; margin-top: 0.75rem;">We respect your privacy. Unsubscribe anytime.</p>
+        <p class="form__status" id="newsletter-status"></p>
+        <p class="fineprint">We respect your privacy. Unsubscribe anytime.</p>
       </div>
     </section>
   </main>
@@ -234,7 +237,7 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <img class="footer__logo" src="./assets/logo.svg" alt="" width="34" height="34" />
+        <img class="footer__logo" src="./assets/logo.svg" alt="" width="44" height="44" />
         <div>
           <strong>AllergenWise</strong>
           <div class="fineprint">Specialised allergen consultancy (hospitality)</div>
